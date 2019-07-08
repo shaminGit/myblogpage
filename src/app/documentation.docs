@@ -1,0 +1,36 @@
+import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs/';
+import { AngularFirestore, AngularFirestoreCollection, AngularFirestoreDocument } from 'angularfire2/firestore'
+//import 'rxjs/add/operator/map';
+
+interface Note {
+  content: string;
+  hearts: Number;
+  id?: string;
+}
+
+@Component({
+  selector: 'app-root',
+  templateUrl: './app.component.html',
+  styleUrls: ['./app.component.scss']
+})
+export class AppComponent implements OnInit {
+  title = 'fireworld';
+  notesCollection: AngularFirestoreCollection<Note>;
+  notes: Observable<Note[]>;
+  constructor(private afs: AngularFirestore) { }
+
+  ngOnInit() {
+    this.notesCollection = this.afs.collection('users');
+    this.notes = this.notesCollection.valueChanges();
+    console.log(this.notes)
+    this.notes.subscribe(data => {
+      console.log(data);
+    })
+  }
+}
+
+
+
+
+

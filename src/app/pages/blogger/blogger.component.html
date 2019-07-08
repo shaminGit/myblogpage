@@ -1,0 +1,31 @@
+<div class="custom">
+    <section *ngIf="feeds;else empty_template">
+        <div class="card" *ngFor="let feed of feeds">
+            <div class="card-image">
+                <img src="/assets/blog.jpg" class="img-responsive">
+            </div>
+            <div class="card-header">
+                <div class="card-title h5">{{feed['title']}}</div>
+                <div class="card-subtitle text-gray">{{feed['description']}}</div>
+            </div>
+            <div class="card-body">
+                {{feed['content']}}
+            </div>
+            <div class="card-footer">
+                <a href="{{feed['url']}}">{{feed['content']}}</a>
+            </div>
+        </div>
+    </section>
+    <ng-template #empty_template>
+        <div class="empty">
+            <div class="empty-icon">
+                <i class="icon icon-people"></i>
+            </div>
+            <p class="empty-title h5">You have no new messages</p>
+            <p class="empty-subtitle">Click the button to start a conversation.</p>
+            <div class="empty-action">
+                <button class="btn btn-primary">Send a message</button>
+            </div>
+        </div>
+    </ng-template>
+</div>

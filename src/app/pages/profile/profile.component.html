@@ -1,0 +1,31 @@
+<!-- Show initals when avatar image is unavailable or not fully loaded -->
+<div class="panel">
+
+    <div class="panel-header">
+        <figure class="avatar avatar-xl" data-initial="YZ" style="background-color: #5755d9;">
+            <img src="/assets/img2.jpg" alt="...">
+        </figure>
+
+        <div class="panel-title">Jenifer Lopez</div>
+    </div>
+    <div class="panel-nav">
+        <!-- navigation components: tabs, breadcrumbs or pagination -->
+        <ul class="tab tab-block">
+            <li class="tab-item active">
+                <a routerLink="profile">Profile</a>
+            </li>
+            <li class="tab-item">
+                <a routerLink="task" class="active">Tasks</a>
+            </li>
+        </ul>
+    </div>
+    <div class="panel-body">
+        <!-- contents -->
+        here goes my content
+    </div>
+    <div class="panel-footer">
+        <!-- buttons or inputs -->
+        <button (click)="save()" class="btn">Save</button>
+
+    </div>
+</div>

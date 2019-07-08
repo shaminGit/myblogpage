@@ -1,0 +1,28 @@
+<div class="custom">
+    <section *ngIf="posts;else empty_template">
+        <div class="card" *ngFor="let post of posts">
+            <div class="card-header custom">
+                <div class="card-title h5 ">{{this.post['title']}}</div>
+            </div>
+            <div class="card-body custom">
+                {{this.post['posts'] | slice: 0:100 }}
+            </div>
+            <div class="card-footer post">
+                <a routerLink='/post/{{ post["id"]}}' class="btn btn-primary">read more</a>
+            </div>
+        </div>
+    </section>
+
+    <ng-template #empty_template>
+        <div class="empty">
+            <div class="empty-icon">
+                <i class="icon icon-people"></i>
+            </div>
+            <p class="empty-title h5">You have no new messages</p>
+            <p class="empty-subtitle">Click the button to start a conversation.</p>
+            <div class="empty-action">
+                <button class="btn btn-primary">Send a message</button>
+            </div>
+        </div>
+    </ng-template>
+</div>

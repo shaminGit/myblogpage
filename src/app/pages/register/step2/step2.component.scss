@@ -1,0 +1,39 @@
+.avatar {
+    margin-left: 1em;
+}
+
+.panel {
+
+    width: 25em;
+    height: 25em;
+    text-align: left;
+    position: fixed;
+    left: 35%;
+}
+
+.avatar {
+    margin-top: .5em;
+
+
+}
+
+.panel-header {
+    text-align: center;
+    color: #e84393
+}
+
+.panel-title {
+    margin-top: .3em;
+}
+
+.panel {
+    padding: .5em;
+    overflow: auto;
+    border: .4em solid #ecf0f1;
+    border-bottom-right-radius: 2em;
+    color: black;
+}
+
+.btn {
+    margin-left: .5em;
+}
